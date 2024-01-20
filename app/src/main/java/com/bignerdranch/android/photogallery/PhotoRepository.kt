@@ -1,6 +1,6 @@
 package com.bignerdranch.android.photogallery
 
-import com.bignerdranch.android.photogallery.app.FlickrApi
+import com.bignerdranch.android.photogallery.api.FlickrApi
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.create
