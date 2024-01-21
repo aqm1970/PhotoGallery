@@ -3,6 +3,7 @@ package com.bignerdranch.android.photogallery
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.bignerdranch.android.photogallery.api.GalleyItem
 import com.bignerdranch.android.photogallery.databinding.ListItemGalleryBinding
 
@@ -10,7 +11,9 @@ class PhotoViewHolder(
     private val binding: ListItemGalleryBinding
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(galleryItem: GalleyItem) {
-        // TODO
+        binding.itemImageView.load(galleryItem.url) {
+            placeholder(R.drawable.bill_up_close)
+        }
     }
 }
 class PhotoListAdapter(
