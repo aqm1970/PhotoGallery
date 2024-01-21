@@ -10,5 +10,5 @@ interface FlickrApi {
                 "&nojsoncallback=1" +
                 "&extras=url_s"
     )
-    suspend fun fetchPhotos(): String
+    suspend fun fetchPhotos(): FlickrResponse
 }
