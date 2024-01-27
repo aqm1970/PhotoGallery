@@ -1,7 +1,7 @@
 package com.bignerdranch.android.photogallery
 
 import com.bignerdranch.android.photogallery.api.FlickrApi
-import com.bignerdranch.android.photogallery.api.GalleyItem
+import com.bignerdranch.android.photogallery.api.GalleryItem
 import com.bignerdranch.android.photogallery.api.PhotoInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -26,6 +26,6 @@ class PhotoRepository {
 
     suspend fun fetchPhotos() = flickrApi.fetchPhotos().photos.galleryItems
 
-    suspend fun searchPhotos(query: String) : List<GalleyItem> =
+    suspend fun searchPhotos(query: String) : List<GalleryItem> =
         flickrApi.searchPhotos(query).photos.galleryItems
 }
