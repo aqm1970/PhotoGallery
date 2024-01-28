@@ -24,8 +24,19 @@ class PreferenceRepository(
         }
     }
 
+    val lastResultId: Flow<String> = dataStore.data.map {
+        it[PREF_LAST_RESULT] ?: ""
+    }.distinctUntilChanged()
+
+    suspend fun setLastResultId(lastResultId: String) {
+        dataStore.edit {
+            it[PREF_LAST_RESULT] = lastResultId
+        }
+    }
+
     companion object {
         private val SEARCH_QUERY_KEY = stringPreferencesKey("search_query")
+        private val PREF_LAST_RESULT = stringPreferencesKey("lastResultId")
         private var INSTANCE: PreferenceRepository? = null
 
         fun initialize(context: Context) {
